@@ -10,7 +10,7 @@
   "browserify": {
     "transform": [
       "reactify",
-      "sassify"
+      ["sassify", { "auto-inject": true }]
     ]
   },
   "keywords": [

@@ -1,7 +1,10 @@
+$font-color: blue;
+$font-site: 'Lato', sans-serif;
+
 body {
-	background: blue;
+	font-family: Lato;
 }
 
 p { 
-	color: blue; 
+	color: $font-color; 
 } 
