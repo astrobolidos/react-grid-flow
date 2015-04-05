@@ -1,0 +1,32 @@
+{
+  "name": "react-grid-flow",
+  "version": "0.0.1",
+  "description": "grid system test and flow test with react components",
+  "main": "js/app.js",
+  "scripts": {
+    "start": "watchify -o js/bundle.js -v -d .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "sassify"
+    ]
+  },
+  "keywords": [
+    "react",
+    "grid",
+    "flow"
+  ],
+  "author": "astrobolidos",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.13.1"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.7",
+    "reactify": "^1.1.0",
+    "sassify": "^0.7.0",
+    "watchify": "^2.4.0"
+  }
+}
