@@ -1,0 +1,24 @@
+$font-color: #EFE9F4;
+$font-site: 'Lato', sans-serif;
+$border: 1px solid #dadada;
+$background: #72705B;
+$accent-color1: #9AA0A8;
+$accent-color2: #A7C4B5;
+$accent-color3: #A9D8B8;
+
+* {
+  font-family: $font-site;
+  margin: 0px;
+  padding: 0px;
+}
+
+.background {
+	background: $accent-color3 !important;
+}
+
+.toolbar {
+	background: $background;
+	color: $font-color;
+	float: none !important;
+	margin: auto;
+}

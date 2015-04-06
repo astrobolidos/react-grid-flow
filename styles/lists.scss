@@ -1,0 +1,10 @@
+ul {
+	list-style: none;
+}
+
+li {
+	&:hover {
+		background: $accent-color2;
+	}
+}
+
