@@ -1,5 +1,6 @@
 $font-color: blue;
 $font-site: 'Lato', sans-serif;
+$border: 1px solid #dadada;
 
 * {
   font-family: $font-site;
@@ -8,8 +9,8 @@ $font-site: 'Lato', sans-serif;
 $pad: 20px;
 
 .grid {
-  background: white;
   margin: 0 0 $pad 0;
+  color: $font-color;
   
   &:after {
     /* Or @extend clearfix */
@@ -40,6 +41,9 @@ $pad: 20px;
 }
 .col-1-8 {
   width: 12.5%;
+}
+.col-5-6 {
+	width: 83.33%;
 }
 
 /* Opt-in outside padding */
