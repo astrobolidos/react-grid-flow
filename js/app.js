@@ -2,18 +2,7 @@ window.React = require('react');
 require('../styles/site.scss');
 
 var React = require('react');  
- 
-var Toolbar = React.createClass({
-	render: function() {
-		return (
-			<div className="background">
-				<div className="col-5-6 toolbar" styles={{textAlign:'center'}}>
-					{this.props.children}
-				</div>
-			</div> 
-		)
-	}
-});
+var Toolbar = require('./components/grid/toolbar');
 
 var SideBar = React.createClass({
 	render: function() {
@@ -28,18 +17,17 @@ var SideBar = React.createClass({
 var App = React.createClass({
 	render: function() {
 		return (
-			<div className="grid">
+			<div className="grid">			
+				<Toolbar>
+					<p>This is my toolbar with centralized bar</p>
+				</Toolbar>
 				<SideBar>
 					<ul>
 						<li>Mail</li>
 						<li>Calendar</li>
 						<li>People</li>												
 					</ul>
-				</SideBar>			
-				<Toolbar>
-					<p>This is my toolbar with centralized bar</p>
-				</Toolbar>
-
+				</SideBar>
 
 			</div>
 		)

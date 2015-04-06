@@ -13,7 +13,11 @@ $accent-color3: #A9D8B8;
 }
 
 .background {
-	background: $accent-color3 !important;
+	background: $background !important;
+}
+
+.sideBar {
+	background: $accent-color2 !important;
 }
 
 .toolbar {
