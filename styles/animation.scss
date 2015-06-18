@@ -10,11 +10,14 @@
 }
 
 .pulse {
-	animation: pulse 2s 1;
+	animation: pulse 1s;
+	transform: scale(1.5);
 }
-.pulse2 {
-	animation: pulse 3s 1;
+@keyframes resize {
+  50% { width: 50%; };
+  100% { width: 100%; };	
 }
+
 
 @keyframes pulse {
   33% { background-color: #A7C4B5 };

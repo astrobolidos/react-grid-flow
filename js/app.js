@@ -25,9 +25,21 @@ var Body = React.createClass({
 })
 
 var Control = React.createClass({
-	render: function() {
-		var classNames = 'clearBoth ' + this.props.className;
-		return <input type="text" name="iText" className={classNames} value={this.props.value} />
+	getInitialState: function() {
+		return { animating: false }
+	},
+	componentWillReceiveProps: function(nextProps) {
+		if(nextProps.value !== undefined)
+			this.setState({animating: true})
+	},	
+	componentDidUpdate: function(prevProps, prevState) {
+		var c = this;
+		if(this.state.animating)
+			setTimeout(function() { c.setState({animating: false}) }, 3000);
+	},
+	render: function() {	
+		var c = this.state.animating ? 'pulse' : '';
+		return <input type="text" ref="iText" className={c} value={this.props.value} />
 	}
 })
 
@@ -35,16 +47,6 @@ var Control = React.createClass({
 var Dynamic = React.createClass({
 	getInitialState: function() {
 		return { info: [] }
-	},
-	componentDidUpdate: function() {
-		console.log('componentDidUpdate');
-		var component = this;
-		setTimeout(function() {
-			for(i = 0; i < component.state.info.length; i++) {
-				component.state.info[i].className = '';
-			}
-			component.setState({info: component.state.info});	
-		}, 3000);
 	},
 	handleAddClick: function(event) {
 		this.state.info.push({name: 'control' + this.state.info.length, value:this.state.info.length, className:''});
@@ -54,7 +56,6 @@ var Dynamic = React.createClass({
 		var component = this;
 		for(i = 0; i < this.state.info.length; i++) {
 			this.state.info[i].value = this.state.info[i].value + 3;
-			this.state.info[i].className = 'pulse';
 		}
 		this.setState({info: this.state.info});
 	},
