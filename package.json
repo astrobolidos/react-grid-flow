@@ -4,11 +4,16 @@
   "description": "grid system test and flow test with react components",
   "main": "js/app.js",
   "scripts": {
-    "start": "watchify -o js/bundle.js -v -d .",
+    "start": "watchify js/app.js -o js/bundle.js -v -d .",
     "t": "browserify js/app.js -o js/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserify": {
+    "options": {
+        "browserifyOptions": {
+            "debug": true
+        }
+    },    
     "transform": [
       "reactify",
       ["sassify", { "auto-inject": true }]
