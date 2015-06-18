@@ -5,10 +5,22 @@
 }
 
 .update-enter.update-enter-active {
-  opacity: 1;
+  opacity: 0.50;
   transform: translateX(0em);
 }
 
+.pulse {
+	animation: pulse 3s;
+}
+.pulse2 {
+	animation: pulse 3s;
+}
+
+@keyframes pulse {
+  50% { background-color: #A7C4B5 };
+  75% { background-color: #A9D8B8; };
+  100% { background-color: #FFFFFF; };
+}
 
 .update-leave {
   transform: translateX(-200em);
