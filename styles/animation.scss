@@ -10,15 +10,15 @@
 }
 
 .pulse {
-	animation: pulse 3s;
+	animation: pulse 2s 1;
 }
 .pulse2 {
-	animation: pulse 3s;
+	animation: pulse 3s 1;
 }
 
 @keyframes pulse {
-  50% { background-color: #A7C4B5 };
-  75% { background-color: #A9D8B8; };
+  33% { background-color: #A7C4B5 };
+  66% { background-color: #A9D8B8; };
   100% { background-color: #FFFFFF; };
 }
 

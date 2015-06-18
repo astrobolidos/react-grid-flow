@@ -36,30 +36,33 @@ var Dynamic = React.createClass({
 	getInitialState: function() {
 		return { info: [] }
 	},
+	componentDidUpdate: function() {
+		console.log('componentDidUpdate');
+		var component = this;
+		setTimeout(function() {
+			for(i = 0; i < component.state.info.length; i++) {
+				component.state.info[i].className = '';
+			}
+			component.setState({info: component.state.info});	
+		}, 3000);
+	},
 	handleAddClick: function(event) {
 		this.state.info.push({name: 'control' + this.state.info.length, value:this.state.info.length, className:''});
 		this.setState({info: this.state.info})
 	},
 	handleUpdateClick: function(event) {
+		var component = this;
 		for(i = 0; i < this.state.info.length; i++) {
 			this.state.info[i].value = this.state.info[i].value + 3;
 			this.state.info[i].className = 'pulse';
 		}
 		this.setState({info: this.state.info});
 	},
-	handleCleanClick: function(event) {
-		for(i = 0; i < this.state.info.length; i++) {
-			this.state.info[i].className = '';
-		}
-		this.setState({info: this.state.info});		
-	},
 	render: function() {
 		return <div className="col-2-3">
 			<input type="button" name="btnAdd" onClick={this.handleAddClick} value="Add control" />
 			&nbsp;
 			<input type="button" name="btnUpdate" onClick={this.handleUpdateClick} value="Update values" />
-			&nbsp;
-			<input type="button" name="btnClean" onClick={this.handleCleanClick} value="Clean styles" />
 			<br/>
 			<CSSTransitionGroup transitionName="update" transitionAppear={true}>
 				{this.state.info.map(function(m, i){
