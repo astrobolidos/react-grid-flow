@@ -9,6 +9,16 @@
   transform: translateX(0em);
 }
 
+.update-leave {
+  transform: translateX(-200em);
+  transition: all .5s ease-in;
+}
+
+.update-leave.update-leave-active {
+  opacity: 0.00;
+}
+
+
 .pulse {
 	animation: pulse 1s;
 	transform: scale(1.5);
@@ -25,11 +35,3 @@
   100% { background-color: #FFFFFF; };
 }
 
-.update-leave {
-  transform: translateX(-200em);
-  transition: all .5s ease-in;
-}
-
-.update-leave.update-leave-active {
-  opacity: 0.00;
-}
